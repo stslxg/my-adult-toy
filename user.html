@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+
+    [if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]
+
+  -->
+<!--
+
+    [if IE 8]>         <html class="lt-ie9"> <![endif]
+
+  -->
+<!--
+
+    [if gt IE 8]><!
+
+  -->
+<html><!--<![endif]-->
+  <head>
+    <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>智能趣玩</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style id="bricksAppStyle"></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-resource.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.js"></script>
+    <script src="js/user.js"></script>
+  </head>
+  <body ng-app="user">
+    <!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+    <!--[if lt IE 9]>
+	<script src="bower_components/es5-shim/es5-shim.js"></script>
+	<script src="bower_components/json3/lib/json3.min.js"></script>
+	<![endif]-->
+
+    <!-- ngView:  -->
+    <div class="jumbotron" ng-controller="AuthCtrl">
+      <h1>智能趣玩</h1>
+      <p>带给你不一样的愉悦生活质感</p>
+      <div class="col-lg-2">
+	<button ng-click="onClickLogoutButton()" type="button" class="btn btn-warning btn-block">登出</button>
+      </div>
+      <div class="col-lg-2">
+	<a href="product.html" type="button" class="btn btn-info btn-block">产品信息</a>
+      </div>      
+    </div>
+    <div ng-view style="margin-left:10px;margin-right:10px"></div>
+    <div class="row" style="margin-left:5px">
+      <div class="col-lg-6">
+	<hr class="hr-white"></hr>
+	<p>By Xuangui Huang, For Demo.</p>
+      </div>
+    </div>
+</body></html>

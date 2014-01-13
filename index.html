@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+
+    [if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]
+
+  -->
+<!--
+
+    [if IE 8]>         <html class="lt-ie9"> <![endif]
+
+  -->
+<!--
+
+    [if gt IE 8]><!
+
+  -->
+<html><!--<![endif]-->
+  <head>
+    <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>智能趣玩</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fixed-positioning.css" rel="stylesheet">
+    <style id="bricksAppStyle"></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-resource.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.js"></script>
+    <script src="js/user.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+    <!--[if lt IE 9]>
+	<script src="bower_components/es5-shim/es5-shim.js"></script>
+	<script src="bower_components/json3/lib/json3.min.js"></script>
+	<![endif]-->
+
+    <!-- ngView:  -->
+    <div>
+      <div class="navbar navbar-fixed-top">
+	<div class="jumbotron">
+	  <h1>智能趣玩</h1>
+	  <p>带给你不一样的愉悦生活质感</p>
+	  <div class="col-lg-2">
+            <a class="btn btn-info btn-block" href="product.html">产品信息</a>
+	  </div>
+	  <div class="col-lg-2"  ng-app="user" ng-controller="Auth0Ctrl">
+            <button ng-click="onClickLoginButton()" type="button" class="btn btn-success btn-block">登录并购买</button>
+	  </div>
+	</div>
+      </div>
+      <div style="top:250px;height:80%;width:100%;margin-left:10px" data-0="left:0%;opacity:1" data-200p="left:100%;opacity:0">
+	<div style="margin-left:20%;margin-top:10%">
+	  <h1 style="font-size:70px">和她/他相隔万里，却只能通过QQ聊天？</h1>
+	</div>
+	<div style="margin-left:80%">
+	  <p style="align:right">往下拉动滚动条，寻找解决方法</p>
+	</div>
+      </div>
+      <div style="height:80%;width:100%;margin-left:10px" data-100p="top:100%;opacity:0;left:0%" data-200p="top:40%;opacity:1;left:0%" data-250p="top:40%;opacity:1;left:0%" data-350p="top:40%;opacity:0;left:-100%">
+	<div style="margin-left:20%;margin-top:10%">
+	  <h1 style="font-size:70px" class="text-danger">你们OUT了！！！</h1>
+	</div>
+      </div>
+      <div style="height:80%;width:100%;margin-left:10px" data-350p="top:-100px;opacity:0;" data-450p="top:350px;opacity:1" data-550p="top:350px;opacity:1" data-650p="top:300px;opacity:1">
+	<div style="margin-left:10%;margin-top:5%">
+	  <h1 style="font-size:70px">智能趣玩</h1>
+	  <h1 style="font-size:100px">应有尽有</h1>	  
+	</div>
+      </div>
+      <div style="height:80%;width:100%;margin-left:10px" data-450p="top:-100px;opacity:0;" data-550p="top:400px;opacity:1" data-650p="top:325px;opacity:1">
+	<div style="margin-left:35%;margin-top:10%">
+	  <h1 style="font-size:70px" class="text-success">让你们xing福！</h1>	  
+	</div>
+      </div>
+      <div style="height:80%;width:100%;margin-left:10px" data-550p="top:2000px;opacity:0;" data-650p="top:400px;opacity:1">
+	<div style="margin-left:45%;margin-top:10%">
+	  <div class="col-lg-4">
+	    <a class="btn btn-info btn-block" href="product.html">产品信息</a>
+	  </div>	  
+	</div>
+      </div>
+      <div style="height:80%;width:100%;margin-left:30px;top:35%;left:72%" data-700p="opacity:0" data-750p="opacity:1">
+	<img src="img/index.jpg"/>
+      </div>  
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script type="text/javascript">
+      var s = skrollr.init();
+    </script>
+  </body>
+</html>

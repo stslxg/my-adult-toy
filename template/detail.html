@@ -1,0 +1,59 @@
+<div ng-show="user">
+  <div class="page-header">
+    <h2>下新订单
+      <div class="col-lg-2">
+    	<span><a href="#/" type="button" class="btn btn-warning btn-large">取消</a></span>
+      </div>
+    </h2>
+  </div>
+  <div class="col-lg-8">
+    <form role="form" name="newOrder">
+      <div class="form-group">
+    	<label class="form-label">您的名字</label>
+    	<input type="text" ng-model="order.name" ng-readonly="true" class="form-control"></input>
+      </div>
+      <div class="form-group">
+	<label class="form-label">选择产品</label>
+	<table class="table">
+	  <tbody>
+	    <tr ng-repeat="product in products | orderByPriority">
+              <td>{{$index + 1}}</td>
+	      <td><img ng-src="img/{{product.img}}" class="img-thumbnail" height="250px" width="250px"/></td>
+	      <td>
+		<h4>{{product.name}}</h4><br>{{product.description_short}}
+	      </td>
+	      <td>
+		{{product.money | currency:"RMB¥"}}
+		<br>
+		<br>
+		<button class="btn btn-lg btn-success" ng-hide="inOrder($index+1)" ng-click="addtoOrder($index+1)">加入订单！</button>
+		<span class="text-success" ng-show="inOrder($index+1)">√ 已加入订单<br></span>
+		<button class="btn btn-lg btn-danger" ng-show="inOrder($index+1)" ng-click="removefromOrder($index+1)">删除</button>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+      </div>
+      <div class="form-group">
+	<label class="form-label">订单金额</label>
+	<input type="text" ng-readonly="true" class="form-control" value="{{order.money | currency:'RMB¥'}}"></input>
+      </div>
+      <div class="form-group has-feedback">
+    	<label class="form-label">配送地址</label>
+    	<input type="text" name="address" ng-model="order.address" class="form-control" required></input>
+	<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="newOrder.address.$error.required"></span>
+	<span class="text-danger" ng-show="newOrder.address.$error.required">请输入地址！</span>
+      </div>
+      <div class="form-group has-feedback">
+    	<label class="form-label">联系方式</label>
+    	<input type="number" name="tel" ng-model="order.tel" class="form-control" required></input>
+	<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="newOrder.tel.$error.required || newOrder.tel.$error.number"></span>
+	<span class="text-danger" ng-show="newOrder.tel.$error.required">请输入电话号码！</span>
+	<span class="text-danger" ng-show="newOrder.tel.$error.number">您输入的不是电话号码！</span>
+      </div>
+      <div class="col-lg-4"><button class="btn btn-block btn-success" ng-click="save()" ng-disabled="getFormStatus()">提交新订单</button></div>
+      <div class="col-lg-4"><button class="btn btn-block btn-primary" ng-click="save_address()" ng-disabled="getInfoStatus()">保存地址、联系方式</button></div>
+      <span class="text-success" ng-show="info_change">保存成功！</span>
+    </form>
+  </div>
+</div>

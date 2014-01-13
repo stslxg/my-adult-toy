@@ -1,0 +1,56 @@
+<div ng-show="user">
+  <div class="page-header">
+    <div class="col-lg-6">
+      <div class="col-lg-4">
+	<a href="#/new" type="button" class="btn btn-success btn-block">购买新产品</a>
+      </div>
+      <br>
+      <h2>
+	<span><img ng-src="{{user.avatar_url}}"/>
+	  {{user.name}}，欢迎来到智能趣玩！<small>以下是您的订单。</small></span>
+      </h2>
+    </div>
+  </div>
+  <div class="col-lg-10">
+    <div class="col-lg-6">
+      <input type="search" ng-model="search" class="form-control" placeholder="搜索订单"></input>
+    </div>
+    <table class="table table-striped">
+      <thead>
+	<tr>
+    	  <th>#</th>
+    	  <th>购买产品</th>
+	  <th>订单金额</th>
+	  <th>下单时间</th>
+	  <th>订单状态</th>
+    	  <th>配送地址</th>
+    	  <th>联系方式</th>
+	</tr>
+      </thead>
+      <tbody>
+	<tr ng-repeat="order in orders | orderByPriority | filter: search">
+          <td>{{$index + 1}}</td>
+          <td>
+	    <table class="table table-bordered">
+	      <tr align="left">
+		<td ng-repeat="product_id in order.product" align="middle">
+		  <img ng-src="img/{{products[product_id].img}}" class="img-rounded" height="80px" width="80px" alt="{{products[product_id].name}}" style="float:middle"/><br>
+		  {{products[product_id].name}}
+		</td>
+	      </tr>
+	    </table>
+	  </td>
+	  <td>{{order.money | currency:"RMB¥"}}</td>
+	  <td>{{order.time}}</td>
+	  <td>
+	    {{order.status}}
+	    <button class="btn btn-xs btn-danger" ng-show="canDelete(order.status)" ng-click="removeOrder(order)">取消订单</button>
+	  </td>
+          <td>{{order.address}}</td>
+          <td>{{order.tel}}</td>
+	</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
